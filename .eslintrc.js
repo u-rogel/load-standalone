@@ -24,6 +24,5 @@ module.exports = {
     quotes: [2, 'single'],
     'import/prefer-default-export': [0],
     'linebreak-style': 0,
-    'no-param-reassign': ['error', { props: true, ignorePropertyModificationsFor: ['Vue'] }],
   },
 }

@@ -1,12 +1,22 @@
 {
   "name": "load-standalone",
   "version": "0.0.1",
-  "main": "index.js",
+  "main": "dist/bundle.js",
   "license": "MIT",
   "author": {
     "name": "Uria Rogel",
     "email": "uria1rogel@gmail.com"
   },
+  "contributors": [
+    {
+      "name": "Jonathan Laabs",
+      "email": "jonathan.laabs@gmail.com"
+    }
+  ],
+  "files": [
+    "dist",
+    "LICENSE"
+  ],
   "scripts": {
     "prepublish": "./node_modules/.bin/rollup --config ./rollup.config.js",
     "publish": "npm publish --access public"
