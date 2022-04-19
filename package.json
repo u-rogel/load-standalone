@@ -4,8 +4,8 @@
   "main": "index.js",
   "license": "MIT",
   "author": {
-    "name" : "Uria Rogel",
-    "email" : "uria1rogel@gmail.com"
+    "name": "Uria Rogel",
+    "email": "uria1rogel@gmail.com"
   },
   "scripts": {
     "prepublish": "./node_modules/.bin/rollup --config ./rollup.config.js",
