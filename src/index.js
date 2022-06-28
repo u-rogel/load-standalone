@@ -8,15 +8,19 @@ export const loadStandalone = ({
 
   const nodeToMountTo = document.getElementById(injectTarget)
   let isAppLoaded = false
+  let appUnmount = null
 
   const modifyDomNode = (node) => {
     if (node && !isAppLoaded) {
       /* eslint-disable-next-line */
       node.innerHTML = ''
-      appLoader()
+      appUnmount = appLoader()
       isAppLoaded = true
     } else if (!node && isAppLoaded) {
       isAppLoaded = false
+      if (appUnmount) {
+        appUnmount()
+      }
     }
   }
 
