@@ -1,16 +1,22 @@
 export const loadStandalone = ({
   injectTarget,
   appLoader,
+}: {
+  injectTarget: string,
+  appLoader: () => () => void
 }) => {
   const targetNode = document.querySelector('body')
+  if (targetNode == null) {
+    throw new Error('DOM must have a body')
+  }
   // Options for the observer (which mutations to observe)
   const config = { attributes: true, childList: true, subtree: true }
 
   const nodeToMountTo = document.getElementById(injectTarget)
   let isAppLoaded = false
-  let appUnmount = null
+  let appUnmount: null | (() => void) = null
 
-  const modifyDomNode = (node) => {
+  const modifyDomNode = (node: HTMLElement | null) => {
     if (node && !isAppLoaded) {
       /* eslint-disable-next-line */
       node.innerHTML = ''
@@ -27,8 +33,7 @@ export const loadStandalone = ({
   modifyDomNode(nodeToMountTo)
 
   // Callback function to execute when mutations are observed
-  const callback = (mutationsList) => {
-    // Use traditional 'for loops' for IE 11
+  const callback = (mutationsList: MutationRecord[]) => {
     const nodeToObserve = document.getElementById(injectTarget)
     mutationsList.forEach(() => modifyDomNode(nodeToObserve))
   }
