@@ -1,18 +1,13 @@
 {
   "name": "load-standalone",
-  "version": "1.1.0",
-  "main": "dist/bundle.js",
+  "version": "1.2.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "license": "MIT",
   "author": {
     "name": "Uria Rogel",
     "email": "uria1rogel@gmail.com"
   },
-  "contributors": [
-    {
-      "name": "Jonathan Laabs",
-      "email": "jonathan.laabs@gmail.com"
-    }
-  ],
   "files": [
     "dist",
     "LICENSE"
@@ -25,6 +20,7 @@
     "@babel/core": "^7.14.0",
     "@babel/preset-env": "^7.14.1",
     "@rollup/plugin-babel": "^5.3.0",
+    "@rollup/plugin-typescript": "^11.1.6",
     "babel-eslint": "^10.1.0",
     "eslint": "^7.25.0",
     "eslint-config-airbnb-base": "^14.2.1",
@@ -32,6 +28,7 @@
     "rollup": "^2.46.0",
     "rollup-plugin-cleanup": "^3.2.1",
     "rollup-plugin-terser": "^7.0.2",
+    "tslib": "^2.6.3",
     "typescript": "^5.5.4"
   },
   "repository": {
